@@ -6,6 +6,7 @@ import ru.melnikov.springBoot.models.PersonUser;
 
 import java.util.Collection;
 
+
 public class PersonUserDetails implements UserDetails {
     private final PersonUser userModel;
 
@@ -28,6 +29,7 @@ public class PersonUserDetails implements UserDetails {
         return this.userModel.getUserName();
     }
 
+    //Кастомный метод для получения нашей модели (может пригодиться, а может и нет)
     public PersonUser getPersonUser(){
         return this.userModel;
     }
