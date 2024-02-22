@@ -22,4 +22,14 @@ public class TestController {
         model.addAttribute("name",personUserDetails.getUsername());
         return "test/hello";
     }
+
+    @GetMapping("/admin")
+    public String adminPage(){
+        return "test/adminPage";
+    }
+    //Возвращает кастомную страницу отказа
+    @GetMapping("/accessDenied")
+    public String accessDeniedPage(){
+        return "test/accessDenied";
+    }
 }

@@ -18,6 +18,8 @@ public class RegistrationPersonService {
     }
 
     public void register(PersonUser personUser){
+        //Присваиваем роль (по дефолту USER)
+        personUser.setRole("ROLE_USER");
         //Добавляем кодировку (теперь в бд пароль юзера будет в формате бикрипт-кодировки)
         personUser.setPassword(passwordEncoder.encode(personUser.getPassword()));
         personRepository.save(personUser);

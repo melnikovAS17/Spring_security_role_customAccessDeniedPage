@@ -1,10 +1,12 @@
 package ru.melnikov.springBoot.security;
 
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import ru.melnikov.springBoot.models.PersonUser;
 
 import java.util.Collection;
+import java.util.Collections;
 
 
 public class PersonUserDetails implements UserDetails {
@@ -16,7 +18,8 @@ public class PersonUserDetails implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
+        //Метод возвращает роль или разрешённые действия(права) юзера
+        return Collections.singletonList(new SimpleGrantedAuthority(userModel.getRole()));
     }
 
     @Override
